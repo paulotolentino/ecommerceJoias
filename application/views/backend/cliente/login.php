@@ -82,41 +82,18 @@
                 </div>
             </div>
         </div>
-	</div>
-
-
-
-
-
-	<!--===============================================================================================-->
+    </div>
+    
 	<script src="<?php echo base_url();?>assets/vendor/jquery/jquery-3.2.1.min.js"></script>
-	<!--===============================================================================================-->
 	<script src="<?php echo base_url();?>assets/vendor/animsition/js/animsition.min.js"></script>
-	<!--===============================================================================================-->
 	<script src="<?php echo base_url();?>assets/vendor/bootstrap/js/popper.js"></script>
 	<script src="<?php echo base_url();?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-	<!--===============================================================================================-->
 	<script src="<?php echo base_url();?>assets/vendor/select2/select2.min.js"></script>
-	<!--===============================================================================================-->
 	<script src="<?php echo base_url();?>assets/vendor/daterangepicker/moment.min.js"></script>
 	<script src="<?php echo base_url();?>assets/vendor/daterangepicker/daterangepicker.js"></script>
-	<!--===============================================================================================-->
 	<script src="<?php echo base_url();?>assets/vendor/countdowntime/countdowntime.js"></script>
-	<!--===============================================================================================-->
 	<script src="<?php echo base_url();?>assets/js/main.js"></script>
 
 </body>
 
 </html>
-
-
-
-
-<!-- <form method="POST" action="<?php echo base_url('login/try') ?>">
-	Email: <input type="text" name="email">
-	<br>
-	Senha:<input type="password" name="senha">
-	<br>
-	<input type="submit" value="Entrar">
-
-</form> -->
