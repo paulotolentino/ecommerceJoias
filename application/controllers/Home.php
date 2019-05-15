@@ -31,4 +31,12 @@ class Home extends CI_Controller {
 		$this->load->view('template/footer');
 		$this->load->view('template/html-footer');
     }
+
+    public function termos(){
+        $this->load->view('template/html-header');
+		$this->load->view('template/header');
+		$this->load->view('frontend/termos');
+		$this->load->view('template/footer');
+		$this->load->view('template/html-footer');
+    }
 }

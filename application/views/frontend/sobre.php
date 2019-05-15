@@ -59,39 +59,3 @@
 		</div>
 	</div>
 </div>
-
-
-<div class="site-section site-section-sm site-blocks-1 border-0" data-aos="fade">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="">
-				<div class="icon mr-4 align-self-start">
-					<span class="icon-truck"></span>
-				</div>
-				<div class="text">
-					<h2 class="text-uppercase">Entrega Expressa</h2>
-					<p>Conte com nossos serviços de entrega expressa para receber mais rápido.</p>
-				</div>
-			</div>
-			<div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="100">
-				<div class="icon mr-4 align-self-start">
-					<span class="icon-refresh2"></span>
-				</div>
-				<div class="text">
-					<h2 class="text-uppercase">Politica de Devolução</h2>
-					<p>Devolva seu produto em ate 7 dias corridos e receba 100% de volta.</p>
-				</div>
-			</div>
-			<div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="200">
-				<div class="icon mr-4 align-self-start">
-					<span class="icon-help"></span>
-				</div>
-				<div class="text">
-					<h2 class="text-uppercase">Atendimento ao Cliente</h2>
-					<p>Para dúvidas, sugestões ou feedbacks, entre em contato conosco por telefone ou através de nosso
-						site.</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>

@@ -19,12 +19,7 @@ class Compra extends CI_Controller {
         if($pedido_id == false) $pedido_id = $this->modelpedidos->novo_pedido($id_cliente);
         $this->modelpedidos->incluir_item($id, $pedido_id);
 
-        $dados['produtos'] = $this->modelpedidos->buscar_itens_pedido($pedido_id);
-        $this->load->view('template/html-header', $dados);
-		$this->load->view('template/header');
-		$this->load->view('backend/cliente/carrinho');
-		$this->load->view('template/footer');
-		$this->load->view('template/html-footer');
+        header('Location:'.base_url('carrinho')); 
     }
     
     public function ver_carrinho(){
@@ -77,14 +72,9 @@ class Compra extends CI_Controller {
             $dados['produtos'] = false;
         }else{
             $this->modelpedidos->cancelar_item($pedido_id, $produto_id);
-            $dados['produtos'] = $this->modelpedidos->buscar_itens_pedido($pedido_id);
         }
 
-        $this->load->view('template/html-header', $dados);
-		$this->load->view('template/header');
-		$this->load->view('backend/cliente/carrinho');
-		$this->load->view('template/footer');
-		$this->load->view('template/html-footer');
+        header('Location:'.base_url('carrinho')); 
     }
 
 }

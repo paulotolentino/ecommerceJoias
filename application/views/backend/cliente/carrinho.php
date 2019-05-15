@@ -40,7 +40,7 @@
 								<td>
                                 <?php
                                 echo number_format($produto->produto_preco, 2, ',', '.');
-                                $preco += $produto->produto_preco;
+                                $preco += $produto->produto_preco * $produto->item_quantidade;
                                 ?>
                                 </td>
 								<td>
@@ -48,7 +48,7 @@
 										<div class="input-group-prepend">
 
 										</div>
-										<input type="text" class="form-control text-center" value="1" placeholder=""
+										<input type="text" readonly class="form-control text-center" value="<?php echo $produto->item_quantidade;?>" placeholder=""
 											aria-label="Example text with button addon"
 											aria-describedby="button-addon1">
 										<div class="input-group-append">
@@ -72,14 +72,23 @@
 			<div class="col-md-6">
 				<div class="row mb-5">
 					<div class="col-md-6 mb-3 mb-md-0">
-						<button class="btn btn-primary btn-sm btn-block">Atualizar Carrinho</button>
+                        <a style="color:white;" href="<?php echo base_url('carrinho/')?>">
+						    <button class="btn btn-primary btn-sm btn-block">
+                                Atualizar Carrinho
+                            </button>
+                        </a>
 					</div>
+                    <style>
+                    .cont_compr:hover{
+                        color:white;
+                    }
+                    </style>
 					<div class="col-md-6">
-						<button class="btn btn-outline-primary btn-sm btn-block">
-                            <a href="<?php echo base_url('catalogo/')?>">
+                        <a class= "cont_compr" href="<?php echo base_url('catalogo/')?>">
+						    <button class="btn btn-outline-primary btn-sm btn-block cont_compr">
                                 Continuar comprando
-                            </a>
-                        </button>
+                            </button>
+                        </a>
 					</div>
 				</div>
 			</div>

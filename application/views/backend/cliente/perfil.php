@@ -123,9 +123,9 @@
 									required>
 							</div>
 						</div>
-						<div class="form-row-last">
+						<!-- <div class="form-row-last"> ainda nao esta pronto
 							<input type="submit" id="numero" name="register" class="register" value="Atualizar Dados">
-						</div>
+						</div> -->
 					</div>
 				</form>
 			</div>

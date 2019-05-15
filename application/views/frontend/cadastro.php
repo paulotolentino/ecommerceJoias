@@ -12,8 +12,13 @@
     <link rel="stylesheet" href="<?php echo base_url()?>assets/css/style-reg.css"/>
 </head>
 <body class="form-v10">
-	<div class="text-center">              
-         <a href="<?php echo base_url()?>" class="js-logo-clone"><img style="align: center;" src="<?php echo base_url()?>assets/images/cm.png" width="400px"></a>              
+	<div class="text-center" style="
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;">              
+         <a href="<?php echo base_url()?>" class="js-logo-clone"><img src="<?php echo base_url()?>assets/images/cm.png" width="400px"></a>              
      </div>
 
 	<div class="page-content">
