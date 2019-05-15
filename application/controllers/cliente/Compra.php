@@ -77,4 +77,34 @@ class Compra extends CI_Controller {
         header('Location:'.base_url('carrinho')); 
     }
 
+    public function pedidos(){
+        $this->load->model('clientes_model', 'modelclientes');
+        $id_cliente = $this->session->userdata('uid_cliente');
+        $dados['cliente'] = $this->modelclientes->buscar_usuario(NULL, NULL, $id_cliente)->row();
+        $dados['endereco'] = $this->modelclientes->buscar_endereco($dados['cliente']->usuario_endereco);
+        $dados['pedidos'] = $this->modelpedidos->busca_pedidos_fechados($id_cliente);
+        $dados['perfil'] = true;
+
+        $this->load->view('template/html-header', $dados);
+		$this->load->view('template/header');
+        $this->load->view('backend/cliente/pedidos');
+		$this->load->view('template/footer');
+		$this->load->view('template/html-footer');
+    }
+    
+    public function pedido($pedido_id){
+        $this->load->model('clientes_model', 'modelclientes');
+        $id_cliente = $this->session->userdata('uid_cliente');
+        $dados['cliente'] = $this->modelclientes->buscar_usuario(NULL, NULL, $id_cliente)->row();
+        $dados['pedido'] = $this->modelpedidos->busca_pedido($pedido_id);
+        $dados['produtos'] = $this->modelpedidos->buscar_itens_pedido($pedido_id);
+        $dados['perfil'] = true;
+
+        $this->load->view('template/html-header', $dados);
+		$this->load->view('template/header');
+        $this->load->view('backend/cliente/pedido');
+		$this->load->view('template/footer');
+		$this->load->view('template/html-footer');
+	}
+
 }

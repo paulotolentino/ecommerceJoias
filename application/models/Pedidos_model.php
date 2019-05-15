@@ -10,8 +10,23 @@ class Pedidos_model extends CI_Model {
 	public function busca_id_pedido_aberto($id_cliente){		
         $this->db->where('tb_pedido.pedido_usuario', $id_cliente);
         $this->db->where('tb_pedido.pedido_status', 1);
-        $get =  $this->db->get('tb_pedido');
+        $get = $this->db->get('tb_pedido');
         if($get->num_rows() == 1) return $get->row()->pedido_id;
+        return false;		
+    }
+
+    public function busca_pedidos_fechados($id_cliente){		
+        $this->db->where('tb_pedido.pedido_usuario', $id_cliente);
+        $this->db->where('tb_pedido.pedido_status != 1');
+        $get = $this->db->get('tb_pedido');
+        if($get->num_rows() > 0) return $get->result();
+        return false;		
+    }
+
+    public function busca_pedido($pedido_id){		
+        $this->db->where('tb_pedido.pedido_id', $pedido_id);
+        $get = $this->db->get('tb_pedido');
+        if($get->num_rows() > 0) return $get->row();
         return false;		
     }
     
@@ -64,6 +79,7 @@ class Pedidos_model extends CI_Model {
 
     public function finaliza_pedido($pedido_id){
         $update['pedido_status'] = 2;
+        $update['pedido_data'] = date('Y-m-d H:i:s');
         $this->db->update('tb_pedido', $update);
     }
 

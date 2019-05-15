@@ -27,4 +27,6 @@ $route['comprar/(:num)']        = 'cliente/compra/index/$1';
 $route['cancelar']              = 'cliente/compra/cancelar_pedido';
 $route['finalizar']             = 'cliente/compra/finalizar_pedido';
 $route['perfil']                = 'cliente/perfil';
+$route['pedidos']               = 'cliente/compra/pedidos';
+$route['pedido/(:num)']         = 'cliente/compra/pedido/$1';
 

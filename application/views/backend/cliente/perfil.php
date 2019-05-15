@@ -19,7 +19,7 @@
 								<label for="nome" style="color:black;">Nome:</label>
 							</div>
 							<div class="form-row col-md-10">
-								<input type="text" id="nome" name="nome"
+								<input readonly type="text" id="nome" name="nome"
 									value="<?php echo ucwords($cliente->usuario_nome);?>" required>
 							</div>
                         </div>
@@ -28,7 +28,7 @@
 								<label for="email" style="color:black;">Email:</label>
 							</div>
 							<div class="form-row col-md-10">
-								<input type="text" id="email" name="email"
+								<input readonly type="text" id="email" name="email"
 									value="<?php echo $cliente->usuario_email;?>" required>
 							</div>
 						</div>
@@ -41,11 +41,11 @@
 							</div>
 							<div class="form-group col-md-10">
                                 <div class="form-row form-row-1 col-md-4">
-                                    <input type="text" pattern="^\d{2}$" name="ddd<?php echo $num ?>" id="ddd<?php echo $num ?>"
+                                    <input readonly type="text" pattern="^\d{2}$" name="ddd<?php echo $num ?>" id="ddd<?php echo $num ?>"
                                     value="<?php echo substr($telefone->telefone_numero, 0, 2);?>" <?php if($num ==1) echo 'required'?>>
                                 </div>
                                 <div class="form-row form-row-2 col-md-8">
-                                    <input type="text" pattern="^\d{9}|\d{8}$" name="telefone<?php echo $num ?>"
+                                    <input readonly type="text" pattern="^\d{9}|\d{8}$" name="telefone<?php echo $num ?>"
                                     id="telefone<?php echo $num ?>" value="<?php echo substr($telefone->telefone_numero, 2);?>"
                                     <?php if($num ==1) echo 'required'?>>
                                 </div>
@@ -63,7 +63,7 @@
 								<label for="numero" style="color:white;">Número:</label>
 							</div>
 							<div class="form-row col-md-10">
-								<input type="text" id="numero" name="numero"
+								<input readonly type="text" id="numero" name="numero"
 									value="<?php echo $endereco->endereco_numero;?>" required>
 							</div>
 						</div>
@@ -72,7 +72,7 @@
 								<label for="cep" style="color:white;">CEP:</label>
 							</div>
 							<div class="form-row col-md-10">
-								<input type="text" id="cep" name="cep" value="<?php echo $endereco->endereco_cep;?>"
+								<input readonly type="text" id="cep" name="cep" value="<?php echo $endereco->endereco_cep;?>"
 									maxlength="8" minlength="8" size="8" pattern="\d*" required>
 							</div>
 						</div>
@@ -81,7 +81,7 @@
                                 <label for="rua" style="color:white;">Rua:</label>
                             </div>
 							<div class="form-row col-md-10">
-								<input type="text" id="rua" name="rua" value="<?php echo $endereco->endereco_rua;?>"
+								<input readonly type="text" id="rua" name="rua" value="<?php echo $endereco->endereco_rua;?>"
 									required>
 							</div>
 						</div>
@@ -90,7 +90,7 @@
                                 <label for="bairro" style="color:white;">Bairro:</label>
                             </div>
 							<div class="form-row col-md-10">
-								<input type="text" id="bairro" name="bairro"
+								<input readonly type="text" id="bairro" name="bairro"
 									value="<?php echo $endereco->endereco_bairro;?>" required>
 
 							</div>
@@ -100,7 +100,7 @@
                                 <label for="cidade" style="color:white;">Cidade:</label>
                             </div>
 							<div class="form-row col-md-10">
-								<input type="text" id="cidade" name="cidade"
+								<input readonly type="text" id="cidade" name="cidade"
 									value="<?php echo $endereco->endereco_cidade;?>" required>
 
 							</div>
@@ -110,7 +110,7 @@
                                 <label for="estado" style="color:white;">Estado:</label>
                             </div>
 							<div class="form-row col-md-10">
-								<input type="text" id="estado" name="estado"
+								<input readonly type="text" id="estado" name="estado"
 									value="<?php echo $endereco->endereco_estado;?>" required>
 							</div>
 						</div>
@@ -119,7 +119,7 @@
                                 <label for="pais" style="color:white;">País:</label>
                             </div>
 							<div class="form-row col-md-10">
-								<input type="text" id="pais" name="pais" value="<?php echo $endereco->endereco_pais;?>"
+								<input readonly type="text" id="pais" name="pais" value="<?php echo $endereco->endereco_pais;?>"
 									required>
 							</div>
 						</div>

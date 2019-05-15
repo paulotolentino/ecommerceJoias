@@ -18,10 +18,10 @@ class Perfil extends CI_Controller {
 
         $this->load->view('template/html-header', $dados);
 		$this->load->view('template/header');
-        $this->load->view('backend/cliente/perfil', $dados);
+        $this->load->view('backend/cliente/perfil');
 		$this->load->view('template/footer');
 		$this->load->view('template/html-footer');
-	}
+    }
 
 	// Verificação do Login
 	public function login(){
@@ -42,11 +42,8 @@ class Perfil extends CI_Controller {
 
 	// Logout
 	public function logout(){
-
         $array_items = array('uid_cliente');
-
-        $this->session->unset_userdata($array_items);
-        
+        $this->session->unset_userdata($array_items);        
 		redirect(base_url());
     }
 }
