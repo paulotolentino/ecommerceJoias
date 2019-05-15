@@ -97,9 +97,9 @@
         }
     }
 
-    function is_adm(){
+    function is_admin(){
         $_this = & get_instance();
-        if (!$_this->session->has_userdata('uid_adm')) {
+        if (!$_this->session->has_userdata('uid_admin')) {
             redirect(base_url('admin/login'));
             exit;
         }

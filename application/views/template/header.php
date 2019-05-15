@@ -20,6 +20,7 @@
 								<ul>
                                     <?php
                                     if($this->session->userdata('uid_cliente')!= NULL) {?>
+                                    Olá, <?php echo strstr(InformacoesUsuario('usuario_nome'), ' ', true);?>
                                     <li>
                                         <a href="<?php echo base_url('perfil/');?>">
                                             <span class="icon icon-person"></span>

@@ -78,10 +78,10 @@ class Compra extends CI_Controller {
     }
 
     public function pedidos(){
-        $this->load->model('clientes_model', 'modelclientes');
+        $this->load->model('usuarios_model', 'modelusuarios');
         $id_cliente = $this->session->userdata('uid_cliente');
-        $dados['cliente'] = $this->modelclientes->buscar_usuario(NULL, NULL, $id_cliente)->row();
-        $dados['endereco'] = $this->modelclientes->buscar_endereco($dados['cliente']->usuario_endereco);
+        $dados['cliente'] = $this->modelusuarios->buscar_usuario(NULL, NULL, $id_cliente)->row();
+        $dados['endereco'] = $this->modelusuarios->buscar_endereco($dados['cliente']->usuario_endereco);
         $dados['pedidos'] = $this->modelpedidos->busca_pedidos_fechados($id_cliente);
         $dados['perfil'] = true;
 
@@ -93,9 +93,9 @@ class Compra extends CI_Controller {
     }
     
     public function pedido($pedido_id){
-        $this->load->model('clientes_model', 'modelclientes');
+        $this->load->model('usuarios_model', 'modelusuarios');
         $id_cliente = $this->session->userdata('uid_cliente');
-        $dados['cliente'] = $this->modelclientes->buscar_usuario(NULL, NULL, $id_cliente)->row();
+        $dados['cliente'] = $this->modelusuarios->buscar_usuario(NULL, NULL, $id_cliente)->row();
         $dados['pedido'] = $this->modelpedidos->busca_pedido($pedido_id);
         $dados['produtos'] = $this->modelpedidos->buscar_itens_pedido($pedido_id);
         $dados['perfil'] = true;

@@ -5,7 +5,7 @@ class Login extends CI_Controller {
 
 	public function __construct(){
         parent::__construct();
-        $this->load->model('clientes_model', 'modelclientes');
+        $this->load->model('usuarios_model', 'modelusuarios');
     }
         
     // Página de Login
@@ -17,7 +17,7 @@ class Login extends CI_Controller {
 	public function login(){
 		$email=$this->input->post('email');
 		$senha=$this->input->post('senha');
-		$userlogado = $this->modelclientes->buscar_usuario($email, $senha, NULL);		
+		$userlogado = $this->modelusuarios->buscar_usuario($email, $senha, NULL);		
 			
         if ($userlogado->num_rows() == 1) {
             $dadosSession['uid_cliente'] = $userlogado->row()->usuario_id;
@@ -32,11 +32,8 @@ class Login extends CI_Controller {
 
 	// Logout
 	public function logout(){
-
         $array_items = array('uid_cliente');
-
-        $this->session->unset_userdata($array_items);
-        
+        $this->session->unset_userdata($array_items);        
 		redirect(base_url());
     }
 
@@ -90,15 +87,15 @@ class Login extends CI_Controller {
         $estado = $endereco->uf;
         $pais = 'Brasil';
         
-        $endereco = $this->modelclientes->novo_endereco($numero, $rua, $bairro, $cidade, $estado, $pais, $cep);
-        $usuario = $this->modelclientes->novo_usuario($nome, $email, $senha, $endereco, false);
+        $endereco = $this->modelusuarios->novo_endereco($numero, $rua, $bairro, $cidade, $estado, $pais, $cep);
+        $usuario = $this->modelusuarios->novo_usuario($nome, $email, $senha, $endereco, false);
         switch($tels){
             case 3:
-                $this->modelclientes->novo_telefone($telefone3, $usuario);
+                $this->modelusuarios->novo_telefone($telefone3, $usuario);
             case 2:
-                $this->modelclientes->novo_telefone($telefone2, $usuario);
+                $this->modelusuarios->novo_telefone($telefone2, $usuario);
             default:
-                $this->modelclientes->novo_telefone($telefone1, $usuario);
+                $this->modelusuarios->novo_telefone($telefone1, $usuario);
         }
         echo '<script> alert("Cadastro Realizado");  window.location.href="'.base_url().'";</script>';
     }

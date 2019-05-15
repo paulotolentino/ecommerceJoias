@@ -30,3 +30,9 @@ $route['perfil']                = 'cliente/perfil';
 $route['pedidos']               = 'cliente/compra/pedidos';
 $route['pedido/(:num)']         = 'cliente/compra/pedido/$1';
 
+// rotas admin
+$route['admin/login']           = 'admin/login';
+$route['admin/login/try']       = 'admin/login/login';
+$route['admin/logout']          = 'admin/login/logout';
+
+
